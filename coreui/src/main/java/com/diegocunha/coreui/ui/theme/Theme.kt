@@ -1,4 +1,4 @@
-package com.diegocunha.datasource.ui.theme
+package com.diegocunha.coreui.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

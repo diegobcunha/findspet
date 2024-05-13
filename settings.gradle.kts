@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Encontre seu pet"
-include(":app", ":datasource", ":commons")
+include(":app", ":datasource", ":commons", ":coreui")
