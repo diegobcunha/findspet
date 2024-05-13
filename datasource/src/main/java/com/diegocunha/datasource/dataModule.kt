@@ -1,8 +1,6 @@
-package com.diegocunha.findpets.datasource
+package com.diegocunha.datasource
 
-import com.diegocunha.findpets.BuildConfig
-import com.diegocunha.findpets.data.network.FindsPetService
-import com.diegocunha.findpets.data.network.adapter.CallAdapterFactory
+import com.diegocunha.network.adapter.CallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -11,12 +9,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val dataModule = module {
 
-    single { retrofit(get()).create(FindsPetService::class.java) }
-
     factory { okHttp3() }
 }
 
-private fun retrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
+fun retrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
     .baseUrl("")
     .client(okHttpClient)
     .addConverterFactory(GsonConverterFactory.create())

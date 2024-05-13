@@ -1,4 +1,4 @@
-package com.diegocunha.findpets.datasource.network.adapter
+package com.diegocunha.network.adapter
 
 import okhttp3.Request
 import retrofit2.Call

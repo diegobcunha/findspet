@@ -1,4 +1,4 @@
-package com.diegocunha.findpets.datasource.network.adapter
+package com.diegocunha.network.adapter
 
 import okio.Timeout
 import retrofit2.Call

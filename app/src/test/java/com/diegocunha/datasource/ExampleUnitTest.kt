@@ -1,4 +1,4 @@
-package com.diegocunha.findpets.datasource
+package com.diegocunha.datasource
 
 import org.junit.Test
 

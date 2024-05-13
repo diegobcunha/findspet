@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.diegocunha.findpets.datasource"
+    namespace = "com.diegocunha.datasource"
     compileSdk = 34
 
     defaultConfig {
@@ -27,6 +27,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }

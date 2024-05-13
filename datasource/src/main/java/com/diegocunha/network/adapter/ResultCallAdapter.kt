@@ -1,4 +1,4 @@
-package com.diegocunha.findpets.datasource.network.adapter
+package com.diegocunha.network.adapter
 
 import java.lang.reflect.Type
 import retrofit2.Call

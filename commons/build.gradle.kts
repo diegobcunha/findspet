@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.diegocunha.findpets.commons"
+    namespace = "com.diegocunha.commons"
     compileSdk = 34
 
     defaultConfig {

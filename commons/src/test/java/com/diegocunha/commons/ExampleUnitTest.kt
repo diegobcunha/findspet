@@ -1,4 +1,4 @@
-package com.diegocunha.findpets
+package com.diegocunha.commons
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.diegocunha.findpets.ui.theme
+package com.diegocunha.datasource.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
