@@ -13,10 +13,11 @@
         android:theme="@style/Theme.EncontreSeuPet"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.diegocunha.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.EncontreSeuPet">
+            android:theme="@style/Theme.EncontreSeuPet"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
