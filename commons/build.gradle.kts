@@ -38,6 +38,7 @@ dependencies {
     api(libs.koin.android)
     api(libs.koin.android.compose)
     api(libs.paging)
+    api(libs.navigation.compose)
 
     api(libs.androidx.core.ktx)
 
