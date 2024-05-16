@@ -33,7 +33,7 @@ fun HomeScreen() {
         content = {
             items(response.itemCount) { index ->
                 val pet = response.peek(index) ?: return@items
-                PetCardBox(imageUrl = pet.image)
+                PetCardBox(pet = pet)
             }
         }
     )

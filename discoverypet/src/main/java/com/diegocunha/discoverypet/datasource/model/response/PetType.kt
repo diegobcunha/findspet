@@ -4,5 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 enum class PetType {
     @SerializedName("Cão")
-    DOG
+    DOG,
+    @SerializedName("Gato")
+    CAT
 }

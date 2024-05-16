@@ -1,5 +1,6 @@
 package com.diegocunha.discoverypet.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,22 +13,25 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.diegocunha.coreui.components.CardBox
 import com.diegocunha.coreui.components.ImageLoader
 import com.diegocunha.coreui.theme.PetsTheme
+import com.diegocunha.coreui.tokens.colors.overImage
+import com.diegocunha.discoverypet.ui.home.PetUi
 
 private val GRID_SPACING = 8.dp
 
 @Composable
 fun PetCardBox(
     modifier: Modifier = Modifier,
-    imageUrl: String
+    pet: PetUi
 ) {
     CardBox(
-        modifier = Modifier
+        modifier = modifier
             .height(360.dp)
             .padding(vertical = GRID_SPACING),
         onClick = {},
@@ -38,7 +42,7 @@ fun PetCardBox(
                     .align(Alignment.Center)
                     .fillMaxSize(),
                 painter = rememberAsyncImagePainter(
-                    model = imageUrl
+                    model = pet.image
                 ),
                 contentDescription = null
             )
@@ -50,12 +54,13 @@ fun PetCardBox(
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
                     .fillMaxWidth()
+                    .background(overImage)
                     .padding(horizontal = 6.dp, vertical = 4.dp)
             ) {
                 Text(
-                    text = "Perrito",
-                    style = PetsTheme.typography.p5,
-                    color = PetsTheme.colors.secondary,
+                    text = pet.type,
+                    style = PetsTheme.typography.h3,
+                    color = Color.White,
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1
                 )
