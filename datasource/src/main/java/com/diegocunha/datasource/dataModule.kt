@@ -1,19 +1,20 @@
 package com.diegocunha.datasource
 
-import com.diegocunha.network.adapter.CallAdapterFactory
+import com.diegocunha.datasource.network.adapter.CallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+private const val BASE_URL = "https://cms.petsrs.com.br/api/"
 val dataModule = module {
 
     factory { okHttp3() }
 }
 
 fun retrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
-    .baseUrl("")
+    .baseUrl(BASE_URL)
     .client(okHttpClient)
     .addConverterFactory(GsonConverterFactory.create())
     .addCallAdapterFactory(CallAdapterFactory())

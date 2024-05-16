@@ -1,4 +1,4 @@
-package com.diegocunha.network.adapter
+package com.diegocunha.datasource.network.adapter
 
 import retrofit2.Call
 import retrofit2.Response

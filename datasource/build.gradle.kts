@@ -39,7 +39,9 @@ android {
 
 dependencies {
     implementation(project(":commons"))
-    implementation(libs.retrofit)
+    api(libs.retrofit)
+    api(libs.gson)
+    api(libs.paging)
     implementation(libs.retrofit.gsonconverter)
     implementation(libs.okhttp3.okhttp)
     implementation(libs.okhttp3.logging)

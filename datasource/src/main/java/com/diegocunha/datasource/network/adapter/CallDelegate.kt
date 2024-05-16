@@ -1,4 +1,4 @@
-package com.diegocunha.network.adapter
+package com.diegocunha.datasource.network.adapter
 
 import okhttp3.Request
 import retrofit2.Call

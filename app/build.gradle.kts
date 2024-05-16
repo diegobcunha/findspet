@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":commons"))
     implementation(project(":datasource"))
     implementation(project(":coreui"))
+    implementation(project(":discoverypet"))
 
     testImplementation(libs.junit)
 

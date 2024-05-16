@@ -1,8 +1,8 @@
-package com.diegocunha.network.adapter
+package com.diegocunha.datasource.network.adapter
 
-import java.lang.reflect.Type
 import retrofit2.Call
 import retrofit2.CallAdapter
+import java.lang.reflect.Type
 
 class ResultCallAdapter(private val type: Type): CallAdapter<Type, Call<Result<Type>>> {
 
