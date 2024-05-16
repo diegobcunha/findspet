@@ -1,6 +1,7 @@
 package com.diegocunha.datasource
 
 import com.diegocunha.datasource.network.adapter.CallAdapterFactory
+import com.diegocunha.datasource.network.interceptor.AccessTokenInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -39,6 +40,7 @@ private fun okHttp3(): OkHttpClient {
     val logger = HttpLoggingInterceptor()
     logger.level = level
 
-    builder.interceptors().add(logger)
+    builder.addInterceptor(logger)
+    builder.addInterceptor(AccessTokenInterceptor())
     return builder.build()
 }

@@ -9,11 +9,11 @@ class PetRepositoryImpl(
     private val api: DiscoveryPetService,
 ) : PetRepository {
 
-    override suspend fun searchPets() = Pager(
+    override fun searchPets(initialSize: Int) = Pager(
         PagingConfig(
-            pageSize = 1,
+            pageSize = initialSize,
             prefetchDistance = 2,
-            initialLoadSize = 12
+            initialLoadSize = initialSize
         )
     ) { PetSource(api) }.flow
 }

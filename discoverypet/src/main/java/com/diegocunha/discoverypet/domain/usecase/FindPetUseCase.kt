@@ -10,8 +10,8 @@ class FindPetUseCase(
     private val repository: PetRepository
 ) {
 
-    suspend operator fun invoke(): Flow<PagingData<PetDomain>> =
-        repository.searchPets().transformPagingData {
+    operator fun invoke(initialSize: Int): Flow<PagingData<PetDomain>> =
+        repository.searchPets(initialSize).transformPagingData {
             PetDomain(it.attributes.picture.data.first().attributes.formats.thumbnail.url)
         }
 }

@@ -24,8 +24,13 @@ class PetSource(
         }
     }
 
-    private fun PetResponse.prevPage() =
-        meta.pagination.page.toInt().coerceAtLeast(DEFAULT_PAGE) - DEFAULT_PAGE_INCREMENT
+    private fun PetResponse.prevPage(): Int? =
+        if (meta.pagination.page - DEFAULT_PAGE_INCREMENT < DEFAULT_PAGE) {
+            null
+        } else {
+            meta.pagination.page.toInt() - DEFAULT_PAGE_INCREMENT
+        }
+
 
     private fun PetResponse.nextPage() = meta.pagination.page.toInt() + DEFAULT_PAGE_INCREMENT
 

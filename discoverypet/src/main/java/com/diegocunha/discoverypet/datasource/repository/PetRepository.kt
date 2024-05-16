@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface PetRepository {
 
-    suspend fun searchPets(): Flow<PagingData<Pet>>
+    fun searchPets(initialSize: Int): Flow<PagingData<Pet>>
 }

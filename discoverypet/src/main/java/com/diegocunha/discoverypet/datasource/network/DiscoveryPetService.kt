@@ -6,9 +6,11 @@ import retrofit2.http.Query
 
 interface DiscoveryPetService {
 
-    @GET("5&pagination[page]=5&pagination[pageSize]=12&populate=foto,cidade&sort=createdAt:desc")
+    @GET("pets")
     suspend fun getPets(
-        @Query("page") page: Int,
-        @Query("pageSize") pageSize: Int
-    ) : PetResponse
+        @Query("pagination[page]") page: Int,
+        @Query("pagination[pageSize]") pageSize: Int,
+        @Query("populate") populate: String = "foto,cidade",
+        @Query("sort")sort: String = "createdAt:desc"
+    ): PetResponse
 }
