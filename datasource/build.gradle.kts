@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -12,6 +14,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        val properties = gradleLocalProperties(rootDir, providers)
+        buildConfigField("String", "ACCESS_TOKEN", properties.getProperty("SERVICE_API_KEY"))
     }
 
     buildTypes {
