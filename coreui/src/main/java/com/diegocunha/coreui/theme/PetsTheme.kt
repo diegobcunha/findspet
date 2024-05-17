@@ -54,9 +54,9 @@ fun PetsTheme(
 @Composable
 private fun defaultColorsBySystem(): ColorScheme {
     return if (isSystemInDarkTheme()) {
-        lightScheme
-    } else {
         darkScheme
+    } else {
+        lightScheme
     }
 }
 

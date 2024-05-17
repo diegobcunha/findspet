@@ -15,7 +15,7 @@ class FindPetUseCase(
             PetDomain(
                 image = it.attributes.picture.data.first().attributes.formats.thumbnail.url,
                 type = it.attributes.type?.name.orEmpty(),
-                city = it.attributes.city?.attribute?.name.orEmpty()
+                city = it.attributes.city.data.attributes.name
             )
         }
 }

@@ -14,5 +14,5 @@ data class PetAttribute(
     @SerializedName("foto")
     val picture: PetPicture,
     @SerializedName("cidade")
-    val city: PetCity?
+    val city: PetCity
 )

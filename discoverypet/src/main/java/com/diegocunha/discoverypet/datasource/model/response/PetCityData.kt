@@ -1,5 +1,3 @@
 package com.diegocunha.discoverypet.datasource.model.response
 
-data class PetCity(
-    val data: PetCityData
-)
+data class PetCityData(val attributes: PetCityAttribute)

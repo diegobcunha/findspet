@@ -58,7 +58,7 @@ fun PetCardBox(
                     .padding(horizontal = 6.dp, vertical = 4.dp)
             ) {
                 Text(
-                    text = pet.type,
+                    text = pet.city,
                     style = PetsTheme.typography.h3,
                     color = Color.White,
                     overflow = TextOverflow.Ellipsis,
