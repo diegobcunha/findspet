@@ -25,7 +25,12 @@ fun HomeScreen() {
     val response = viewModel.pagingFlow.collectAsLazyPagingItems()
 
     Column {
-        FilterList(options = listOf(FilterItem("Text"))) {
+        FilterList(options = listOf(
+            FilterItem("Pet", false, true),
+            FilterItem("Pet", false, false),
+            FilterItem("Pet", true, true),
+            FilterItem("Pet", false, false)
+        )) {
 
         }
 

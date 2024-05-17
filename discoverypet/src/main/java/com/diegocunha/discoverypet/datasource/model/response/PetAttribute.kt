@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class PetAttribute(
     @SerializedName("tipo")
-    val type: PetType?,
+    val type: PetType,
     @SerializedName("nome")
     val name: String?,
     @SerializedName("nomeContato")
@@ -14,5 +14,7 @@ data class PetAttribute(
     @SerializedName("foto")
     val picture: PetPicture,
     @SerializedName("cidade")
-    val city: PetCity
+    val city: PetCity,
+    @SerializedName("situacao")
+    val status: PetStatus
 )
