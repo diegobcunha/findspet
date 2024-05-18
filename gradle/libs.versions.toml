@@ -17,6 +17,10 @@ coilVersion = "2.6.0"
 gsonVersion = "2.10.1"
 pagingVersion = "3.3.0"
 navigation = "2.7.7"
+coroutinesVersion = "1.8.1"
+coreTesting = "2.2.0"
+mockkVersion = "1.13.11"
+turbineVersion = "1.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,7 +51,12 @@ coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilVersion"
 gson = { module = "com.google.code.gson:gson", version.ref = "gsonVersion" }
 paging = { module = "androidx.paging:paging-runtime", version.ref = "pagingVersion" }
 paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingVersion" }
+paging-testing = { module = "androidx.paging:paging-testing", version.ref = "pagingVersion" }
 navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockkVersion" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbineVersion"}
 
 
 [plugins]

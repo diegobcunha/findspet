@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.diegocunha.commons"
+    namespace = "com.diegocunha.testutils"
     compileSdk = 34
 
     defaultConfig {
@@ -33,14 +33,12 @@ android {
 }
 
 dependencies {
-    api(platform(libs.koin.bom))
-    api(libs.koin.core)
-    api(libs.koin.android)
-    api(libs.koin.android.compose)
-    api(libs.paging)
-    api(libs.navigation.compose)
 
-    api(libs.androidx.core.ktx)
-
-    testImplementation(project(":testutils"))
+    implementation(project(":commons"))
+    api(libs.junit)
+    api(libs.coroutines.test)
+    api(libs.androidx.core.testing)
+    api(libs.mockk)
+    api(libs.paging.testing)
+    api(libs.turbine)
 }

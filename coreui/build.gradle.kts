@@ -54,7 +54,5 @@ dependencies {
     api(libs.coil.compose)
     api(libs.paging.compose)
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(project(":testutils"))
 }

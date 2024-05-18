@@ -50,7 +50,5 @@ dependencies {
     implementation(libs.okhttp3.okhttp)
     implementation(libs.okhttp3.logging)
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(project(":testutils"))
 }
