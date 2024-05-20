@@ -1,4 +1,4 @@
-package com.diegocunha.discoverypet.ui.home
+package com.diegocunha.discoverypet.fixture
 
 import com.diegocunha.discoverypet.domain.model.PetDomain
 import com.diegocunha.discoverypet.domain.model.PetStatusDomain

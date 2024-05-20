@@ -1,17 +1,16 @@
-package com.diegocunha.discoverypet.ui.home
+package com.diegocunha.discoverypet.domain.usecase
 
 import androidx.paging.LoadState
 import androidx.paging.LoadStates
 import androidx.paging.PagingData
 import androidx.paging.testing.asSnapshot
-import com.diegocunha.discoverypet.domain.usecase.FindPetUseCase
-import com.diegocunha.discoverypet.fixture.listDomain
+import com.diegocunha.discoverypet.datasource.repository.PetRepository
 import com.diegocunha.testutils.helpers.BaseUnitTest
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import io.mockk.unmockkAll
-import junit.framework.TestCase.assertTrue
+import junit.framework.TestCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
@@ -19,20 +18,17 @@ import kotlinx.coroutines.launch
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
 
-@ExperimentalCoroutinesApi
-@RunWith(JUnit4::class)
-class HomeViewModelTest : BaseUnitTest() {
+@OptIn(ExperimentalCoroutinesApi::class)
+class FindPetUseCaseTest : BaseUnitTest() {
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var useCase: FindPetUseCase
 
-    private val useCase = mockk<FindPetUseCase>()
+    private val repository = mockk<PetRepository>()
 
     @Before
     fun setup() {
-        viewModel = HomeViewModel(testDispatchersProvider, useCase)
+        useCase = FindPetUseCase(repository)
     }
 
     @After
@@ -42,10 +38,10 @@ class HomeViewModelTest : BaseUnitTest() {
 
     @Test
     fun `WHEN returns success data THEN should return valid information`() = runBlockingTest {
-        coEvery { useCase(any()) } returns flow {
+        coEvery { repository.searchPets(any()) } returns flow {
             emit(
                 PagingData.from(
-                    listDomain,
+                    listOf(pet),
                     LoadStates(
                         refresh = LoadState.NotLoading(true),
                         prepend = LoadState.NotLoading(true),
@@ -55,24 +51,26 @@ class HomeViewModelTest : BaseUnitTest() {
             )
         }
 
-        val result = viewModel.pagingFlow.asSnapshot()
-        coVerify(exactly = 1) { useCase(any()) }
-        assertTrue(result.isNotEmpty())
+        val result = useCase(1).asSnapshot()
+        coVerify(exactly = 1) { repository.searchPets(1) }
+        TestCase.assertTrue(result.isNotEmpty())
     }
 
     @Test
     fun `WHEN returns error data THEN should return valid information`() = runBlockingTest {
-        coEvery { useCase(any()) } returns flow {
+        coEvery { repository.searchPets(any()) } returns flow {
             emit(
                 PagingData.empty()
             )
         }
 
-       val job = launch {
-           viewModel.pagingFlow.toList()
-       }
+        val job = launch {
+            useCase(1).toList()
+        }
 
-        coVerify(exactly = 1) { useCase(any()) }
+        coVerify(exactly = 1) { repository.searchPets(1) }
         job.cancel()
     }
+
+
 }
