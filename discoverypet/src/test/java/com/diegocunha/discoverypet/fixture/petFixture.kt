@@ -1,15 +1,18 @@
-package com.diegocunha.discoverypet.domain.usecase
+package com.diegocunha.discoverypet.fixture
 
 import com.diegocunha.discoverypet.datasource.model.response.Pet
 import com.diegocunha.discoverypet.datasource.model.response.PetAttribute
 import com.diegocunha.discoverypet.datasource.model.response.PetCity
 import com.diegocunha.discoverypet.datasource.model.response.PetCityAttribute
 import com.diegocunha.discoverypet.datasource.model.response.PetCityData
+import com.diegocunha.discoverypet.datasource.model.response.PetMeta
+import com.diegocunha.discoverypet.datasource.model.response.PetPagination
 import com.diegocunha.discoverypet.datasource.model.response.PetPicture
 import com.diegocunha.discoverypet.datasource.model.response.PetPictureAttribute
 import com.diegocunha.discoverypet.datasource.model.response.PetPictureAttributeFormat
 import com.diegocunha.discoverypet.datasource.model.response.PetPictureAttributeFormatSize
 import com.diegocunha.discoverypet.datasource.model.response.PetPictureData
+import com.diegocunha.discoverypet.datasource.model.response.PetResponse
 import com.diegocunha.discoverypet.datasource.model.response.PetStatus
 import com.diegocunha.discoverypet.datasource.model.response.PetType
 
@@ -61,4 +64,22 @@ val petAttribute = PetAttribute(
 val pet = Pet(
     1L,
     petAttribute
+)
+
+val petList = listOf(pet)
+
+val petPagination = PetPagination(
+    1L,
+    10L,
+    1,
+    1
+)
+
+val petMeta = PetMeta(
+    petPagination
+)
+
+val petResponse = PetResponse(
+    petList,
+    petMeta
 )

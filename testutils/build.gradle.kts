@@ -41,4 +41,5 @@ dependencies {
     api(libs.mockk)
     api(libs.paging.testing)
     api(libs.turbine)
+    api(kotlin("test"))
 }

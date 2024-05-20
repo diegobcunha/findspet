@@ -5,6 +5,7 @@ import androidx.paging.LoadStates
 import androidx.paging.PagingData
 import androidx.paging.testing.asSnapshot
 import com.diegocunha.discoverypet.datasource.repository.PetRepository
+import com.diegocunha.discoverypet.fixture.pet
 import com.diegocunha.testutils.helpers.BaseUnitTest
 import io.mockk.coEvery
 import io.mockk.coVerify
