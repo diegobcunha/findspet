@@ -32,7 +32,12 @@ class PetSource(
         }
 
 
-    private fun PetResponse.nextPage() = meta.pagination.page.toInt() + DEFAULT_PAGE_INCREMENT
+    private fun PetResponse.nextPage(): Int? =
+        if (meta.pagination.page + DEFAULT_PAGE_INCREMENT < meta.pagination.pageCount) {
+            meta.pagination.page.toInt() + DEFAULT_PAGE_INCREMENT
+        } else {
+            null
+        }
 
     companion object {
         private const val DEFAULT_PAGE = 1
