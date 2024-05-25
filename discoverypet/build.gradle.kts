@@ -52,9 +52,5 @@ dependencies {
     implementation(project(":datasource"))
     implementation(project(":coreui"))
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-
     testImplementation(project(":testutils"))
 }

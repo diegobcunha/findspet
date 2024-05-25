@@ -41,6 +41,9 @@ dependencies {
     api(libs.navigation.compose)
 
     api(libs.androidx.core.ktx)
+    api(libs.androidx.appcompat)
+
+    api(libs.androidx.core.ktx)
 
     testImplementation(project(":testutils"))
 }
