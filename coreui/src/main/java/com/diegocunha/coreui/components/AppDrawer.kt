@@ -23,7 +23,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -92,8 +92,8 @@ fun <T> AppDrawerItem(
                 .padding(8.dp)
         ) {
             Icon(
-                painter = painterResource(id = item.drawableId),
-                contentDescription = stringResource(id = item.descriptionId),
+                painter = rememberVectorPainter(image = item.icon),
+                contentDescription = null,
                 modifier = Modifier
                     .size(24.dp)
             )

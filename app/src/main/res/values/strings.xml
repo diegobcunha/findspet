@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Encontre seu pet</string>
+    <string name="menu_home">Início</string>
+    <string name="menu_about">Sobre</string>
 </resources>

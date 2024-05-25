@@ -9,6 +9,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DrawerState
@@ -63,12 +65,7 @@ fun MainCompose() {
     val coroutineScope = rememberCoroutineScope()
     var currentItem by remember {
         mutableStateOf(
-            AppDrawerItemInfo(
-                FindPetRoute.Home,
-                R.string.app_name,
-                R.drawable.ic_launcher_background,
-                R.string.app_name
-            )
+            homeOption()
         )
     }
 
@@ -76,12 +73,7 @@ fun MainCompose() {
         PetNavigationDrawer(
             drawerState = drawerState,
             menuItems = listOfDirections(),
-            defaultOption = AppDrawerItemInfo(
-                FindPetRoute.Home,
-                R.string.app_name,
-                R.drawable.ic_launcher_background,
-                R.string.app_name
-            ),
+            defaultOption = homeOption(),
             onItemClick = { petRoute ->
                 val direction = findItem(petRoute.route)
                 direction?.let {
@@ -98,7 +90,7 @@ fun MainCompose() {
                                     drawerState.open()
                                 }
                             }) {
-                                Icon(Icons.Filled.Menu, contentDescription = "")
+                                Icon(Icons.Filled.Menu, contentDescription = null)
                             }
                         },
                         title = { Text(text = stringResource(id = currentItem.title)) }
@@ -125,18 +117,18 @@ fun MainCompose() {
 }
 
 private fun listOfDirections() = listOf<AppDrawerItemInfo<FindPetRoute>>(
+    homeOption(),
     AppDrawerItemInfo(
-        FindPetRoute.Home,
-        R.string.app_name,
-        R.drawable.ic_launcher_background,
-        R.string.app_name
-    ),
-    AppDrawerItemInfo(
-        FindPetRoute.About,
-        R.string.app_name,
-        R.drawable.ic_launcher_background,
-        R.string.app_name
+        drawerOption = FindPetRoute.About,
+        title = R.string.menu_about,
+        icon = Icons.Filled.Info
     )
+)
+
+private fun homeOption(): AppDrawerItemInfo<FindPetRoute> = AppDrawerItemInfo(
+    drawerOption = FindPetRoute.Home,
+    title = R.string.menu_home,
+    icon = Icons.Filled.Home,
 )
 
 private fun findItem(route: String) =

@@ -1,11 +1,10 @@
 package com.diegocunha.coreui.components
 
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.ui.graphics.vector.ImageVector
 
 data class AppDrawerItemInfo<T>(
     val drawerOption: T,
     @StringRes val title: Int,
-    @DrawableRes val drawableId: Int,
-    @StringRes val descriptionId: Int
+    val icon: ImageVector,
 )

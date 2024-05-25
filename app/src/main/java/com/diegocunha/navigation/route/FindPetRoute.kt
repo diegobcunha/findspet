@@ -8,6 +8,6 @@ sealed class FindPetRoute : DefaultNavigation {
     }
 
     data object About : FindPetRoute() {
-        override val route = "route"
+        override val route = "About"
     }
 }
