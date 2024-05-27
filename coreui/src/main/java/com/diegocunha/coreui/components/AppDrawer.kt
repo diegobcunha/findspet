@@ -34,10 +34,10 @@ import kotlinx.coroutines.launch
 fun <T : DefaultNavigation> AppDrawer(
     drawerState: DrawerState,
     menuItems: List<AppDrawerItemInfo<T>>,
-    defaultPick: T,
+    currentItem: T?,
     onClick: (T) -> Unit
 ) {
-    var currentPick by remember { mutableStateOf(defaultPick) }
+    var currentPick by remember { mutableStateOf(currentItem) }
     val coroutineScope = rememberCoroutineScope()
 
     ModalDrawerSheet {

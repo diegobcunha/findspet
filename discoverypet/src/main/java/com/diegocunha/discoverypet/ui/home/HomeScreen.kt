@@ -13,14 +13,14 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.diegocunha.coreui.components.FilterItem
 import com.diegocunha.coreui.components.FilterList
 import com.diegocunha.discoverypet.ui.PetCardBox
-import org.koin.androidx.compose.koinViewModel
+import org.koin.androidx.compose.navigation.koinNavViewModel
 
 private const val COLUMN_COUNT = 2
 private val GRID_SPACING = 8.dp
 
 @Composable
 fun HomeScreen() {
-    val viewModel = koinViewModel<HomeViewModel>()
+    val viewModel = koinNavViewModel<HomeViewModel>()
     val lazyListState = rememberLazyGridState()
     val response = viewModel.pagingFlow.collectAsLazyPagingItems()
 

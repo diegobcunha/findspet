@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 fun <T : DefaultNavigation> PetNavigationDrawer(
     drawerState: DrawerState,
     menuItems: List<AppDrawerItemInfo<T>>,
-    defaultOption: AppDrawerItemInfo<T>,
     onItemClick: (T) -> Unit,
+    currentItem: AppDrawerItemInfo<T>,
     content: @Composable () -> Unit
 ) {
     ModalNavigationDrawer(
@@ -18,7 +18,7 @@ fun <T : DefaultNavigation> PetNavigationDrawer(
             AppDrawer(
                 drawerState = drawerState,
                 menuItems = menuItems,
-                defaultPick = defaultOption.drawerOption,
+                currentItem = currentItem.drawerOption,
                 onClick = onItemClick
             )
         },

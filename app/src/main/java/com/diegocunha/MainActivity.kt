@@ -73,12 +73,19 @@ fun MainCompose() {
         PetNavigationDrawer(
             drawerState = drawerState,
             menuItems = listOfDirections(),
-            defaultOption = homeOption(),
+            currentItem = currentItem,
             onItemClick = { petRoute ->
-                val direction = findItem(petRoute.route)
-                direction?.let {
-                    navController.navigate(it.route)
+                navController.navigate(petRoute.route) {
+                    popUpTo(navController.graph.startDestinationId) {
+                        saveState = true
+                    }
+
+                    launchSingleTop = petRoute.route == navController.graph.startDestinationRoute
+                    restoreState = true
                 }
+
+                currentItem =
+                    checkNotNull(listOfDirections().find { it.drawerOption.route == petRoute.route })
             }
         ) {
             Scaffold(

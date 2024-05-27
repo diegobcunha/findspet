@@ -37,6 +37,7 @@ dependencies {
     api(libs.koin.core)
     api(libs.koin.android)
     api(libs.koin.android.compose)
+    api(libs.koin.android.compose.navigation)
     api(libs.paging)
     api(libs.navigation.compose)
 
