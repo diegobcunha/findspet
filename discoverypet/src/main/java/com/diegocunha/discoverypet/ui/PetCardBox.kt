@@ -9,13 +9,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ChipColors
 import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
@@ -24,6 +24,7 @@ import com.diegocunha.coreui.components.ImageLoader
 import com.diegocunha.coreui.components.StatusChip
 import com.diegocunha.coreui.theme.PetsTheme
 import com.diegocunha.coreui.tokens.colors.overImage
+import com.diegocunha.discoverypet.R
 import com.diegocunha.discoverypet.ui.home.PetUi
 import com.diegocunha.discoverypet.ui.home.PetUiStatus
 
@@ -62,28 +63,40 @@ fun PetCardBox(
                     .padding(horizontal = 6.dp, vertical = 4.dp)
             ) {
                 Text(
-                    text = pet.city,
+                    text = pet.name.orEmpty(),
                     style = PetsTheme.typography.h3,
                     color = Color.White,
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1
                 )
 
-                StatusChip(text = pet.status.name, colors = pet.status.colorScheme())
+                Text(
+                    text = pet.city,
+                    style = PetsTheme.typography.p3,
+                    color = Color.White,
+                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 1
+                )
+
+                StatusChip(text = pet.status.statusLabel(), colors = pet.status.colorScheme())
             }
         }
     }
 }
 
 @Composable
-fun PetUiStatus.colorScheme(): ChipColors {
-    return when (this) {
-        PetUiStatus.MISSED -> SuggestionChipDefaults.suggestionChipColors(
-            containerColor = PetsTheme.colors.errorContainer
-        )
+private fun PetUiStatus.colorScheme() = when (this) {
+    PetUiStatus.MISSED -> SuggestionChipDefaults.suggestionChipColors(
+        containerColor = PetsTheme.colors.errorContainer
+    )
 
-        PetUiStatus.SEARCH -> SuggestionChipDefaults.suggestionChipColors(
-            containerColor = PetsTheme.colors.inverseSurface
-        )
-    }
+    PetUiStatus.SEARCH -> SuggestionChipDefaults.suggestionChipColors(
+        containerColor = PetsTheme.colors.inverseSurface
+    )
+}
+
+@Composable
+private fun PetUiStatus.statusLabel() = when (this) {
+    PetUiStatus.MISSED -> stringResource(id = R.string.discovery_missed_pet)
+    PetUiStatus.SEARCH -> stringResource(id = R.string.discovery_search_owner)
 }

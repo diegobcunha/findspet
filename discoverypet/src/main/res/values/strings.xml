@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="discovery_missed_pet">Desaparecido</string>
+    <string name="discovery_search_owner">Procura-se dono</string>
+    <string name="discovery_adoption">Para adoção</string>
+</resources>

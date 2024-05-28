@@ -10,8 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.diegocunha.coreui.components.FilterItem
-import com.diegocunha.coreui.components.FilterList
 import com.diegocunha.discoverypet.ui.PetCardBox
 import org.koin.androidx.compose.navigation.koinNavViewModel
 
@@ -25,16 +23,16 @@ fun HomeScreen() {
     val response = viewModel.pagingFlow.collectAsLazyPagingItems()
 
     Column {
-        FilterList(
-            options = listOf(
-                FilterItem("Pet", false, true),
-                FilterItem("Pet", false, false),
-                FilterItem("Pet", true, true),
-                FilterItem("Pet", false, false)
-            )
-        ) {
-
-        }
+//        FilterList(
+//            options = listOf(
+//                FilterItem("Pet", false, true),
+//                FilterItem("Pet", false, false),
+//                FilterItem("Pet", true, true),
+//                FilterItem("Pet", false, false)
+//            )
+//        ) {
+//
+//        }
 
         LazyVerticalGrid(
             state = lazyListState,
