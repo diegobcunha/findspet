@@ -5,6 +5,7 @@ import com.diegocunha.discoverypet.domain.model.PetStatusDomain
 import com.diegocunha.discoverypet.domain.model.PetTypeDomain
 
 val petDomain = PetDomain(
+    "name",
     "image",
     type = PetTypeDomain.DOG,
     statusDomain = PetStatusDomain.MISSED,
