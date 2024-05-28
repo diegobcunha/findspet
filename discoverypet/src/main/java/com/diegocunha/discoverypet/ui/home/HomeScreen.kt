@@ -17,7 +17,7 @@ private const val COLUMN_COUNT = 2
 private val GRID_SPACING = 8.dp
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(onItemClicked: (Long) -> Unit) {
     val viewModel = koinNavViewModel<HomeViewModel>()
     val lazyListState = rememberLazyGridState()
     val response = viewModel.pagingFlow.collectAsLazyPagingItems()
@@ -49,7 +49,10 @@ fun HomeScreen() {
             content = {
                 items(response.itemCount) { index ->
                     val pet = response[index] ?: return@items
-                    PetCardBox(pet = pet)
+                    PetCardBox(
+                        pet = pet,
+                        onItemClicked = onItemClicked
+                    )
                 }
             }
         )

@@ -27,5 +27,6 @@ include(
     ":coreui",
     ":discoverypet",
     ":testutils",
-    ":about"
+    ":about",
+    ":petdetail"
 )

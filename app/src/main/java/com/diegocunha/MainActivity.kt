@@ -31,16 +31,21 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.diegocunha.about.ui.AboutScreen
 import com.diegocunha.coreui.components.AppDrawerItemInfo
 import com.diegocunha.coreui.components.PetNavigationDrawer
 import com.diegocunha.coreui.theme.PetsTheme
 import com.diegocunha.discoverypet.ui.home.HomeScreen
 import com.diegocunha.findpets.R
+import com.diegocunha.navigation.route.DEFAULT_ID_FIELD
 import com.diegocunha.navigation.route.FindPetRoute
+import com.diegocunha.navigation.route.navigate
+import com.diegocunha.petdetail.ui.detail.PetDetailScreen
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
@@ -111,11 +116,23 @@ fun MainCompose() {
                     startDestination = FindPetRoute.Home.route
                 ) {
                     composable(FindPetRoute.Home.route) {
-                        HomeScreen()
+                        HomeScreen {
+                            navController.navigate(FindPetRoute.PetDetail.navigate(it))
+                        }
                     }
 
                     composable(FindPetRoute.About.route) {
                         AboutScreen()
+                    }
+
+                    composable(
+                        FindPetRoute.PetDetail.route,
+                        arguments = listOf(navArgument(DEFAULT_ID_FIELD) {
+                            type = NavType.LongType
+                        })
+                    ) { backStackEntry ->
+                        val id = checkNotNull(backStackEntry.arguments?.getLong(DEFAULT_ID_FIELD))
+                        PetDetailScreen(id = id)
                     }
                 }
             }

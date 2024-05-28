@@ -33,13 +33,14 @@ private val GRID_SPACING = 8.dp
 @Composable
 fun PetCardBox(
     modifier: Modifier = Modifier,
+    onItemClicked: (Long) -> Unit,
     pet: PetUi
 ) {
     CardBox(
         modifier = modifier
             .height(360.dp)
             .padding(vertical = GRID_SPACING),
-        onClick = {},
+        onClick = { onItemClicked(pet.id) },
     ) {
         Box {
             ImageLoader(

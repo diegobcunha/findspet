@@ -18,6 +18,7 @@ class HomeViewModel(
     override fun fetchContent(initialPageSize: Int): Flow<PagingData<PetUi>> {
         return useCase(initialPageSize).transformPagingData {
             PetUi(
+                it.id,
                 it.name,
                 it.image,
                 it.type.toUi(),

@@ -1,6 +1,7 @@
 package com.diegocunha.discoverypet.ui.home
 
 data class PetUi(
+    val id: Long,
     val name: String?,
     val image: String,
     val type: PetUiType,

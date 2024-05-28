@@ -17,6 +17,7 @@ class FindPetUseCase(
     operator fun invoke(initialSize: Int): Flow<PagingData<PetDomain>> =
         repository.searchPets(initialSize).transformPagingData {
             PetDomain(
+                id = it.id,
                 name = it.attributes.name,
                 image = it.attributes.picture.data.first().attributes.formats.thumbnail.url,
                 type = it.attributes.type.toDomain(),
