@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_title">Encontre um Pet</string>
+    <string name="about_purpose">Esse aplicativo sem fins lucrativos visa ajudar tutores a encontrar um animal impactado pelas enchentes do Rio Grande do Sul para adoção.</string>
+    <string name="about_info_pt01">Todos os dados aqui são providos através do site\u0020</string>
+    <string name="about_info_site01">https://petsrs.com.br/</string>
+    <string name="about_info_pt02">\u0020sendo de sua responsabilidade a manutenção e garantia de privacidade do mesmo.</string>
+</resources>
