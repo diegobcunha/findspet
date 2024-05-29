@@ -48,3 +48,13 @@ suspend fun <T> MutableStateFlow<GetState<T>>.retryState(
     value = GetState.failure(failureRetrying)
     value = fetch()
 }
+
+/**
+ * Converts a result to a GetState
+ */
+fun <T> Result<T>.toGetState(): GetState<T> {
+    return fold(
+        onSuccess = { GetState.success(it) },
+        onFailure = { GetState.failure(it) }
+    )
+}

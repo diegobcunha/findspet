@@ -54,5 +54,7 @@ dependencies {
     api(libs.coil.compose)
     api(libs.paging.compose)
 
+    implementation(project(":commons"))
+
     testImplementation(project(":testutils"))
 }

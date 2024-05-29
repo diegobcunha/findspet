@@ -4,6 +4,7 @@ import android.app.Application
 import com.diegocunha.commons.coroutines.coroutineModule
 import com.diegocunha.datasource.dataModule
 import com.diegocunha.discoverypet.injection.discoveryPetModule
+import com.diegocunha.petdetail.petDetailModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -20,7 +21,8 @@ class FindPetApplication: Application() {
             modules(
                 dataModule,
                 discoveryPetModule,
-                coroutineModule
+                coroutineModule,
+                petDetailModule
             )
         }
     }
