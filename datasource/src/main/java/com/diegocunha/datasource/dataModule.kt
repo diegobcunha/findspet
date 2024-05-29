@@ -2,6 +2,7 @@ package com.diegocunha.datasource
 
 import com.diegocunha.datasource.network.adapter.CallAdapterFactory
 import com.diegocunha.datasource.network.interceptor.AccessTokenInterceptor
+import com.diegocunha.datasource.network.network.DiscoveryPetService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -12,9 +13,11 @@ private const val BASE_URL = "https://cms.petsrs.com.br/api/"
 val dataModule = module {
 
     factory { okHttp3() }
+
+    single { retrofit(get()).create(DiscoveryPetService::class.java) }
 }
 
-fun retrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
+private fun retrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .client(okHttpClient)
     .addConverterFactory(GsonConverterFactory.create())

@@ -2,7 +2,7 @@ package com.diegocunha.discoverypet.datasource.repository
 
 import androidx.paging.testing.ErrorRecovery
 import androidx.paging.testing.asSnapshot
-import com.diegocunha.discoverypet.datasource.network.DiscoveryPetService
+import com.diegocunha.datasource.network.network.DiscoveryPetService
 import com.diegocunha.discoverypet.fixture.petResponse
 import com.diegocunha.testutils.helpers.BaseUnitTest
 import io.mockk.coEvery

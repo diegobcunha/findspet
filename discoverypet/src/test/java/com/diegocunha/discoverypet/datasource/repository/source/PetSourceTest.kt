@@ -1,7 +1,7 @@
 package com.diegocunha.discoverypet.datasource.repository.source
 
 import androidx.paging.PagingSource
-import com.diegocunha.discoverypet.datasource.network.DiscoveryPetService
+import com.diegocunha.datasource.network.network.DiscoveryPetService
 import com.diegocunha.discoverypet.fixture.petResponse
 import com.diegocunha.testutils.helpers.BaseUnitTest
 import io.mockk.coEvery

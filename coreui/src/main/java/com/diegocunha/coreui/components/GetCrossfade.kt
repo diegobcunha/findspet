@@ -25,6 +25,7 @@ fun <T> GetCrossfade(
     success: @Composable (T) -> Unit,
 ) {
     Crossfade(targetState = state) { targetState ->
+//        println(targetState)
         when (targetState.currentStatus()) {
             GetStatus.INITIAL -> initial(targetState.initial)
             GetStatus.FAILURE -> failure(targetState.failure)

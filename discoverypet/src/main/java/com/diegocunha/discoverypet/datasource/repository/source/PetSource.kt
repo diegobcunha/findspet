@@ -1,9 +1,9 @@
 package com.diegocunha.discoverypet.datasource.repository.source
 
+import com.diegocunha.datasource.model.response.Pet
+import com.diegocunha.datasource.model.response.PetResponse
+import com.diegocunha.datasource.network.network.DiscoveryPetService
 import com.diegocunha.datasource.templates.BasePaginationSource
-import com.diegocunha.discoverypet.datasource.model.response.Pet
-import com.diegocunha.discoverypet.datasource.model.response.PetResponse
-import com.diegocunha.discoverypet.datasource.network.DiscoveryPetService
 
 class PetSource(
     private val api: DiscoveryPetService,

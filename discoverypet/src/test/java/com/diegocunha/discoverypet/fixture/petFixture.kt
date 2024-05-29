@@ -1,20 +1,20 @@
 package com.diegocunha.discoverypet.fixture
 
-import com.diegocunha.discoverypet.datasource.model.response.Pet
-import com.diegocunha.discoverypet.datasource.model.response.PetAttribute
-import com.diegocunha.discoverypet.datasource.model.response.PetCity
-import com.diegocunha.discoverypet.datasource.model.response.PetCityAttribute
-import com.diegocunha.discoverypet.datasource.model.response.PetCityData
-import com.diegocunha.discoverypet.datasource.model.response.PetMeta
-import com.diegocunha.discoverypet.datasource.model.response.PetPagination
-import com.diegocunha.discoverypet.datasource.model.response.PetPicture
-import com.diegocunha.discoverypet.datasource.model.response.PetPictureAttribute
-import com.diegocunha.discoverypet.datasource.model.response.PetPictureAttributeFormat
-import com.diegocunha.discoverypet.datasource.model.response.PetPictureAttributeFormatSize
-import com.diegocunha.discoverypet.datasource.model.response.PetPictureData
-import com.diegocunha.discoverypet.datasource.model.response.PetResponse
-import com.diegocunha.discoverypet.datasource.model.response.PetStatus
-import com.diegocunha.discoverypet.datasource.model.response.PetType
+import com.diegocunha.datasource.model.response.Pet
+import com.diegocunha.datasource.model.response.PetAttribute
+import com.diegocunha.datasource.model.response.PetCity
+import com.diegocunha.datasource.model.response.PetCityAttribute
+import com.diegocunha.datasource.model.response.PetCityData
+import com.diegocunha.datasource.model.response.PetMeta
+import com.diegocunha.datasource.model.response.PetPagination
+import com.diegocunha.datasource.model.response.PetPicture
+import com.diegocunha.datasource.model.response.PetPictureAttribute
+import com.diegocunha.datasource.model.response.PetPictureAttributeFormat
+import com.diegocunha.datasource.model.response.PetPictureAttributeFormatSize
+import com.diegocunha.datasource.model.response.PetPictureData
+import com.diegocunha.datasource.model.response.PetResponse
+import com.diegocunha.datasource.model.response.PetStatus
+import com.diegocunha.datasource.model.response.PetType
 
 val petCityAttribute = PetCityAttribute(
     name = "name"

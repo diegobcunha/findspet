@@ -2,8 +2,8 @@ package com.diegocunha.discoverypet.domain.usecase
 
 import androidx.paging.PagingData
 import com.diegocunha.datasource.extensions.transformPagingData
-import com.diegocunha.discoverypet.datasource.model.response.PetStatus
-import com.diegocunha.discoverypet.datasource.model.response.PetType
+import com.diegocunha.datasource.model.response.PetStatus
+import com.diegocunha.datasource.model.response.PetType
 import com.diegocunha.discoverypet.datasource.repository.PetRepository
 import com.diegocunha.discoverypet.domain.model.PetDomain
 import com.diegocunha.discoverypet.domain.model.PetStatusDomain

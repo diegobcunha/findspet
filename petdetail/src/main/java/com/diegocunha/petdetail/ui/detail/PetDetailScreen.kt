@@ -1,5 +1,6 @@
 package com.diegocunha.petdetail.ui.detail
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -16,9 +17,11 @@ fun PetDetailScreen(id: Long) {
 
     GetCrossfade(
         state = state,
-        initial = {},
+        initial = {
+            Text(text = "Loading")
+        },
         failure = {}) {
-        println(it.name)
+        Text(text = it.name.orEmpty())
     }
 
 }

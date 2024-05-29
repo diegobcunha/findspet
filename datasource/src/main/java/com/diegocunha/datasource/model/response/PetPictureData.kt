@@ -1,4 +1,4 @@
-package com.diegocunha.discoverypet.datasource.model.response
+package com.diegocunha.datasource.model.response
 
 data class PetPictureData(
     val id: Long,

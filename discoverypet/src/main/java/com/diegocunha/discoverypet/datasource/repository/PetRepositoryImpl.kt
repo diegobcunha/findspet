@@ -2,7 +2,7 @@ package com.diegocunha.discoverypet.datasource.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import com.diegocunha.discoverypet.datasource.network.DiscoveryPetService
+import com.diegocunha.datasource.network.network.DiscoveryPetService
 import com.diegocunha.discoverypet.datasource.repository.source.PetSource
 
 class PetRepositoryImpl(
